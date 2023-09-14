@@ -1,0 +1,50 @@
+<%- include("partials/head")%>
+<%- include("partials/header")%>
+<div class="posts">
+    <h1>LISTA DE POSTS</h1>
+    <button class="btn btn-primary m-2">
+        <i class="bi bi-plus"></i>
+    </button>
+</div>
+<!--Tabla con los posts-->            
+<table class="table table-info">
+    <thead class="table-group-divider">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TITULO</th>
+            <th scope="col">CONTENIDO</th>
+            <th scope="col">IMAGEN</th>
+            <th scope="col">FECHA DE CREACION</th>
+            <th scope="col">ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr>
+            <td>1</td>
+            <td>Tema</td>
+            <td>Descripcion</td>
+            <td>imagen1</td>
+            <td>fecha 1</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="botones de edición y eliminación de la información">
+                    <button class="btn btn-primary"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tema</td>
+            <td>Descripcion</td>
+            <td>imagen2</td>
+            <td>fecha 2</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="botones de edición y eliminación de la información">
+                    <button class="btn btn-primary"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<%- include("partials/footer")%>
