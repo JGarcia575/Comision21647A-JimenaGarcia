@@ -4,7 +4,7 @@
   "description": "",
   "main": "baseDeDatos.js",
   "scripts": {
-    "start": "./src/app.js",
+    "start": "node ./src/app.js",
     "test": "nodemon ./src/app.js"
   },
   "keywords": [],
