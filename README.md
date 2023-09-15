@@ -8,7 +8,7 @@ Para este proyecto se utilizaron las siguientes tecnologías:
 - CSS.
 - Bootstrap.
 - Java Script.
-- Node js(express y motor de platilla ejs).
+- Node js(express y motor de plantilla ejs).
 ### Instrucciones
 - Descargar el proyecto.
 - Descomprimir el archivo.
