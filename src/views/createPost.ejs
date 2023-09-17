@@ -4,24 +4,24 @@
 <body>
   <%- include("partials/nav")%>
   <div class="container mt-4">
-    <div class="card">
-      <div class="card-header">
-          Agregar nueva tarea
-      </div>
-      <div class="card-body">
-          <form action="/guardar" method="POST">
+    <div class="card bg-success">
+      <div class="card-header">Agregar nuevo tema</div>
+      <div class="card-body text-white">
+          <form action="/guardar" method="post">
               <div class="mb-3">
                   <label for="titulo" class="form-label">Tema</label>
-                  <input type="text" class="form-control" id="titulo" name="titulo">
+                  <input type="text" class="form-control" id="titulo" name="titulo" required>
               </div>
               <div class="mb-3">
-                  <label for="contenido" class="form-label">Contenido</label>
-                  <input type="text" class="form-control" id="contenido" name="contenido">
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                  Guardar
-              </button>
+                <label for="contenido" class="form-label" >Contenido</label>
+                <textarea class="form-control" rows="5" id="contenido" name="contenido"></textarea>
+              </div> 
+              <div class="mb-3">
+                  <label for="url_imagen" class="form-label">Url de la imagen</label>
+                  <input type="text" class="form-control" id="url_imagen" name="url_imagen" placeholder="Opcional">
+              </div>              
+              <button type="submit" class="btn btn-primary buttonFont">Guardar</button>
+              <button class="btn btn-danger buttonFont">Cancelar</button>
           </form>
       </div>
   </div>

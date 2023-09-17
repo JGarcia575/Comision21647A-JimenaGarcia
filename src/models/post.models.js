@@ -3,14 +3,14 @@ const { sequelize } = require('../database/baseDeDatos.js');
 
 const Post = sequelize.define('Post', {
     titulo: {
-      type: DataTypes.STRING,
-      //allowNull: false
+      type: DataTypes.STRING(500),
+      allowNull: false
     },
     contenido: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING(2000)
      }, 
     url_imagen: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(2000),
       defaultValue: 'https://static.thenounproject.com/png/2616531-200.png'
     }, 
   }, {
