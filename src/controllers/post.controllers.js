@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 const { Post } = require('../models/post.models.js');
 
 const crudPost = {};
@@ -7,8 +8,13 @@ const crudPost = {};
 crudPost.mostrarPosteos = async (req, res) => {
     const posts = await Post.findAll();
     
-    res.render('posts');
+    res.render('posts', {resultado: posts});
 };
+
+//CONTROLADOR PARA IR A LA RUTA DE FORMULARIO DE CREACION DE POST
+crudPost.indexCrearPost = async (req, res) => {
+    res.render('createPost');
+}
 
 // CREAR UN POSTEO
 crudPost.crearPost = async (req, res) => {
@@ -22,10 +28,10 @@ crudPost.crearPost = async (req, res) => {
 
     try {
         const nuevoPost = await Post.create(post);
-        res.send(nuevoPost); 
-        //res.redirect('/posteos);
+        //res.send(nuevoPost); 
+        res.redirect('/posts');
     } catch (error) {
-        res.send({message:'Error al crear el post'});  
+        res.send({message:'Error al crear el post' + error});  
     };
 };
 

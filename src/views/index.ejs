@@ -1,11 +1,22 @@
 <!--Página principal de la aplicacion-->
-<%- include("partials/head")%>
-<%- include("partials/header")%>
+<head>
+    <%- include("partials/head")%>
+</head>
 <body>
-    <div class="bg-image d-flex justify-content-center align-items-center" style="
-    background-image: url('assets/background.jpg');
-    height: 100vh;">
-        <h1 class="text-white">¡BIENVENIDO!</h1>
-    </div>  
+    <%- include("partials/nav")%>
+    <div class="container-fluid py-5">
+        <div class="p-5 text-center centrarElementos" 
+        style="background-image: url('assets/background.jpg'); 
+            height: 600px; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-size: cover;"    
+        >
+            <h1 class="mb-3" >¡BIENVENIDO!</h1>
+            <a class="btn btn-success buttonFont" href="/posts" role="button">IR A POSTEOS</a>
+        </div>
+    </div>
 </body>
+<footer>
 <%- include("partials/footer")%>
+</footer>

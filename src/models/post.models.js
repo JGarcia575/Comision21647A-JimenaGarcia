@@ -4,7 +4,7 @@ const { sequelize } = require('../database/baseDeDatos.js');
 const Post = sequelize.define('Post', {
     titulo: {
       type: DataTypes.STRING,
-      allowNull: false
+      //allowNull: false
     },
     contenido: {
       type: DataTypes.STRING
@@ -15,7 +15,7 @@ const Post = sequelize.define('Post', {
     }, 
   }, {
      tableName: 'Post',
-     timestamps: false
+     //timestamps: false
   });
 
 //Para crear la tabla en la base de datos
