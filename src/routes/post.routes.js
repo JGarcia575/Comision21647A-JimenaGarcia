@@ -15,7 +15,7 @@ postRoutes.post('/guardar', crudPost.crearPost);
 postRoutes.get('/editar/:id', crudPost.indexModificarPost);
 
 //ruta para actualizar un posteo
-postRoutes.post('/actualizarPost', crudPost.actualizarPost); //cambiar x post
+postRoutes.post('/actualizar', crudPost.actualizarPost); //cambiar x post
 
 //ruta para eliminar un post
 postRoutes.get('/borrarPost/:id', crudPost.borrarPost); //cambiar x get

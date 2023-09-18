@@ -30,7 +30,9 @@
             <tr>
                 <td><%= post.id %></td>
                 <td><%= post.titulo %></td>
-                <td><p><%= post.contenido %></p></td>
+                <td>
+                    <p><%= post.contenido %></p>
+                </td>
                 <td><img src="<%= post.url_imagen %>"  alt="imagen subida por el usuario" style="height: 100px; width: 100px;"></td>
                 <td><%= post.createdAt %></td>
                 <td>
@@ -43,8 +45,8 @@
         </tbody>
         <% }) %>
     </table>
-<!--
-    Ejemplo de comentario1
+
+    <!--Ejemplo de comentario1
     <div class="container-fluid mt-100">
         <div class="row">
             <div class="col-md-12">
@@ -76,8 +78,8 @@
             </div>
         </div>
     </div>
--->
 </body>
+-->
 <footer>
     <%- include("partials/footer")%>
 </footer>

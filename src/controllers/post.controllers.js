@@ -28,7 +28,6 @@ crudPost.crearPost = async (req, res) => {
 
     try {
         const nuevoPost = await Post.create(post);
-        //res.send(nuevoPost); 
         res.redirect('/posts');
     } catch (error) {
         res.send({message:'Error al crear el post' + error});  
@@ -46,15 +45,11 @@ crudPost.indexModificarPost = async (req, res) => {
 
 // CONTROLADOR PARA ACTUALIZAR UN POST
 crudPost.actualizarPost = async (req, res) => {
-    //const { id }  = req.params;
     const { id, titulo, contenido, url_imagen} = req.body
 
     //const post = Post.findOne({ where: { id: id } });
 
-    //if (!post) {
-      //  res.send({ message: 'El post a actualizar no se ha encontrado'});
-    //} else {   
-        try {
+    try {
             const postActualizar = await Post.update({ 
                 titulo: titulo,
                 contenido: contenido, 
@@ -64,7 +59,6 @@ crudPost.actualizarPost = async (req, res) => {
               { where: {
                   id: id
               }});
-            //res.send({message: '¡Post actualizado exitosamente' })
             res.redirect('/posts');
         } catch (error) {
             res.send({ message:'Error al actualizar el post determinado' });
