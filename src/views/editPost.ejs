@@ -1,11 +1,56 @@
 <head>
   <%- include("partials/head")%>
 </head>
-<body>
-  <%- include("partials/header")%>
 
-    
-</body>
+<body>
+  <%- include("partials/nav")%>
+
+  <!-- <% if (post) { %> <% } %> -->
+  <div class="container mt-4">
+    <div class="card border-light border-3 bg-dark">
+      <div class="card-header border-light border-2 fs-3 text-warning">Editar tema</div>
+      <div class="card-body border-success text-warning ">
+          <form action="/actualizarPost" method="post">
+              <input 
+              name="id" 
+              value="<%= post.id %>" 
+              hidden>
+              <div class="mb-3">
+                  <label for="titulo" class="form-label">Tema</label>
+                  <input 
+                  type="text" 
+                  class="form-control" 
+                  id="titulo" 
+                  name="titulo" 
+                  value="<%= post.titulo %>" 
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="contenido" class="form-label" >Contenido</label>
+                <p><textarea 
+                class="form-control" 
+                rows="5" 
+                id="contenido" 
+                name="contenido" 
+                value="<%= post.contenido %>">  
+                </textarea></p>
+              </div> 
+              <div class="mb-3">
+                  <label for="url_imagen" class="form-label">Url de la imagen</label>
+                  <input 
+                  type="text" 
+                  class="form-control" 
+                  id="url_imagen" 
+                  name="url_imagen" 
+                  value="<%= post.url_imagen %>" 
+                  placeholder="Opcional">
+              </div>              
+              <button type="submit" class="btn btn-primary buttonFont">Guardar</button>
+              <a href="/posts"  class="btn btn-danger buttonFont">Cancelar</a>
+          </form>
+      </div>
+  </div>
+ </body>
 <footer>
   <%- include("partials/footer")%>
 </footer>

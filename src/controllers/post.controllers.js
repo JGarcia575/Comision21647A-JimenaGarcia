@@ -4,7 +4,7 @@ const { Post } = require('../models/post.models.js');
 const crudPost = {};
 
 
-//LEER TODOS LOS POSTEOS
+//CONTROLADOR PARA LEER TODOS LOS POSTEOS
 crudPost.mostrarPosteos = async (req, res) => {
     const posts = await Post.findAll();
     
@@ -16,7 +16,7 @@ crudPost.indexCrearPost = async (req, res) => {
     res.render('createPost');
 }
 
-// CREAR UN POSTEO
+// CONTROLADOR PARA CREAR UN POSTEO
 crudPost.crearPost = async (req, res) => {
     const { titulo, contenido, url_imagen } = req.body;
 
@@ -35,16 +35,25 @@ crudPost.crearPost = async (req, res) => {
     };
 };
 
-// ACTUALIZAR UN POST
+//CONTROLADOR PARA IR A LA RUTA DE FORMULARIO DE ACTUALIZACIÓN DE POST
+crudPost.indexModificarPost = async (req, res) => {
+    const { id } = req.params;
+
+    const post = await Post.findOne({ where: { id: id }});
+
+    res.render('editPost', { post : post });
+};
+
+// CONTROLADOR PARA ACTUALIZAR UN POST
 crudPost.actualizarPost = async (req, res) => {
-    const { id }  = req.params;
-    const { titulo, contenido, url_imagen} = req.body
+    //const { id }  = req.params;
+    const { id, titulo, contenido, url_imagen} = req.body
 
-    const post = Post.findOne({ where: { id: id } });
+    //const post = Post.findOne({ where: { id: id } });
 
-    if (!post) {
-        res.send({ message: 'El post a actualizar no se ha encontrado'});
-    } else {   
+    //if (!post) {
+      //  res.send({ message: 'El post a actualizar no se ha encontrado'});
+    //} else {   
         try {
             const postActualizar = await Post.update({ 
                 titulo: titulo,
@@ -55,13 +64,15 @@ crudPost.actualizarPost = async (req, res) => {
               { where: {
                   id: id
               }});
-            res.send({message: '¡Post actualizado exitosamente' })
+            //res.send({message: '¡Post actualizado exitosamente' })
+            res.redirect('/posts');
         } catch (error) {
             res.send({ message:'Error al actualizar el post determinado' });
         };
-    };
+    //};
 };
-// BORRAR UN POST
+
+// CONTROLADOR PARA BORRAR UN POST
 crudPost.borrarPost = async (req, res) => {
     const { id }  = req.params;
             
@@ -72,7 +83,8 @@ crudPost.borrarPost = async (req, res) => {
             }
         });
         if (postEliminar) {
-            res.send({ message: '¡Post eliminado exitosamente!' });
+            //res.send({ message: '¡Post eliminado exitosamente!' });
+            res.redirect('/posts');
         } else {
             res.send({ message: 'No existe el id del post a eliminar' });
         }

@@ -12,14 +12,12 @@ postRoutes.get('/crear', crudPost.indexCrearPost); /* (req, res) => { res.render
 postRoutes.post('/guardar', crudPost.crearPost);
 
 //ruta para mostrar el formulario de modificacion de una publicación
-postRoutes.get('/editar', (req, res) => {
-    res.render('editPost');
-})
+postRoutes.get('/editar/:id', crudPost.indexModificarPost);
 
 //ruta para actualizar un posteo
-postRoutes.post('/actualizarPost/:id', crudPost.actualizarPost); //cambiar x post
+postRoutes.post('/actualizarPost', crudPost.actualizarPost); //cambiar x post
 
 //ruta para eliminar un post
-postRoutes.delete('/borrarPost/:id', crudPost.borrarPost); //cambiar x get
+postRoutes.get('/borrarPost/:id', crudPost.borrarPost); //cambiar x get
 
 module.exports = { postRoutes };

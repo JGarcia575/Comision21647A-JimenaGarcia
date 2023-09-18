@@ -4,9 +4,9 @@
 <body>
   <%- include("partials/nav")%>
   <div class="container mt-4">
-    <div class="card bg-success">
-      <div class="card-header">Agregar nuevo tema</div>
-      <div class="card-body text-white">
+    <div class="card border-light border-3 bg-dark">
+      <div class="card-header border-light border-2 fs-3 text-warning">Agregar nuevo tema</div>
+      <div class="card-body border-success text-warning ">
           <form action="/guardar" method="post">
               <div class="mb-3">
                   <label for="titulo" class="form-label">Tema</label>
@@ -21,7 +21,7 @@
                   <input type="text" class="form-control" id="url_imagen" name="url_imagen" placeholder="Opcional">
               </div>              
               <button type="submit" class="btn btn-primary buttonFont">Guardar</button>
-              <button class="btn btn-danger buttonFont">Cancelar</button>
+              <a href="/posts" class="btn btn-danger buttonFont">Cancelar</a>
           </form>
       </div>
   </div>
