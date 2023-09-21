@@ -55,9 +55,7 @@ crudPost.indexModificarPost = async (req, res) => {
     } catch (error) {
         res.send({message: 'Error al buscar el post' + error});
     }
-    //const post = await Post.findOne({ where: { id: id }});
-
-    //res.render('editPost', { post : post });
+    
 };
 
 // CONTROLADOR PARA ACTUALIZAR UN POST

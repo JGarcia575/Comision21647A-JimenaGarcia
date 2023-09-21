@@ -27,10 +27,15 @@
     </div>
   </div>
   <script>
+    /*
+    Esta función cambia el valor del input url_imagen si el usuario introduce ninguna url de una imagen.
+    En la base de datos si el usuario no introduce una url se guarda como un string vacío ' ' y no coloca la url default
+    ingresada en el modelo de post.
+    */
     function validarFormulario() {
       let img = document.Fcrear.url_imagen.value;
       if (img === "") {
-        document.Fcrear.url_imagen.value = 'https://static.thenounproject.com/png/2616531-200.png'
+        document.Fcrear.url_imagen.value = 'https://static.thenounproject.com/png/2616531-200.png';        
       }
     }
   </script>
