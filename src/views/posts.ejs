@@ -4,82 +4,67 @@
 <body>
     <%- include("partials/nav")%>
     <div class="posts my-2">
-        <h1 class="m-2 fs-2">Lista de posteos</h1>
+        <h1 class="m-2 fs-1">Lista de posteos</h1>
         <a href="/crear" class="btn btn-success ms-3">
             <i class="bi bi-upload px-3"></i>
         </a>
-        <!-- <button class="btn btn-outline-light ms-3">
-            <i class="bi bi-plus fs-2 px-3"></i>
-            </button>
-        -->        
     </div>
-    <!--Tabla con los posts-->            
-    <table class="table table-info">
-        <thead class="table-group-divider">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">TITULO</th>
-                <th scope="col">CONTENIDO</th>
-                <th scope="col">IMAGEN</th>
-                <th scope="col">FECHA DE CREACION</th>
-                <th scope="col">ACCIONES</th>
-            </tr>
-        </thead>
-        <% resultado.forEach((post) =>{ %>
-        <tbody class="table-group-divider">
-            <tr>
-                <td><%= post.id %></td>
-                <td><%= post.titulo %></td>
-                <td>
-                    <p><%= post.contenido %></p>
-                </td>
-                <td><img src="<%= post.url_imagen %>"  alt="imagen subida por el usuario" style="height: 100px; width: 100px;"></td>
-                <td><%= post.createdAt %></td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="botones de edición y eliminación de la información">
-                        <a href="/editar/<%= post.id %>" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
-                        <a  href="/borrarPost/<%= post.id%>" class="btn btn-danger"><i class="bi bi-trash"></i></a> 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-        <% }) %>
-    </table>
-
-    <!--Ejemplo de comentario1
-    <div class="container-fluid mt-100">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <div class="media flex-wrap w-100 align-items-center"> <img src="https://i.imgur.com/iNmBizf.jpg" class="d-block ui-w-40 rounded-circle" alt="">
-                            <div class="media-body ml-3"> <a href="javascript:void(0)" data-abc="true">Tom Harry</a>
-                                <div class="text-muted small">13 days ago</div>
-                            </div>
-                            <div class="text-muted small ml-3">
-                                <div>Member since <strong>01/1/2019</strong></div>
-                                <div><strong>134</strong> posts</div>
-                            </div>
+    <!--Tabla con los posts-->
+    <div class="container-sm">            
+        <table class="table table-info align-middle">
+            <% resultado.forEach((post) =>{ %>
+            <thead>
+                <tr>
+                    <th scope="col" hidden>Id</th>
+                    <th scope="col" hidden>Post</th>
+                    <th scope="col" hidden>Img</th>
+                    <th scope="col" hidden>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider text-center">
+                <tr>
+                    <td class="align-top">
+                        <p><%= post.id %></p>
+                    </td>
+                    <td>
+                        <table class="table mb-0 table-info table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="row" class="border-bottom border-warning">
+                                        <h2 class="titlePost"><%= post.titulo %></h2>
+                                    </th>
+                                </tr>        
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle contenido">
+                                        <p><%= post.contenido %></p>
+                                    </td>                                    
+                                </tr>                                
+                            </tbody>
+                                <tfoot>
+                                    <td class="align-bottom fecha">
+                                        <p>Creado: <%= new Date(post.createdAt).toLocaleString() %></p>
+                                    </td>
+                                </tfoot>
+                          </table>                       
+                    </td>
+                    <td class="align-middle">
+                        <img src="<%= post.url_imagen %>" alt="imagen subida por el usuario" style="height: 100px; width: 100px; border-radius: 50%;">
+                    </td>
+                    <td class="align-bottom">
+                        <div class="btn-group" role="group" aria-label="botones de edición y eliminación de la información">
+                            <a href="/editar/<%= post.id %>" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
+                            <a  href="/borrarPost/<%= post.id%>" class="btn btn-danger" ><i class="bi bi-trash"></i></a> 
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <p> For me, getting my business website made was a lot of tech wizardry things. Thankfully i get an ad on Facebook ragarding commence website. I get connected with BBB team. They made my stunning website live in just 3 days.
-                            With the increase demand of online customers. I had to take my business online. BBB Team guided me at each step and enabled me to centralise my work and have control on all aspect of my online business.
-                        </p>
-                        <p> For me, getting my business website made was a lot of tech wizardry things. Thankfully i get an ad on Facebook ragarding commence website. I get connected with BBB team. They made my stunning website live in just 3 days.
-                            With the increase demand of online customers. I had to take my business online. BBB Team guided me at each step and enabled me to centralise my work and have control on all aspect of my online business.
-                        </p>
-                    </div>
-                    <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                        <div class="px-4 pt-3"> <a href="javascript:void(0)" class="text-muted d-inline-flex align-items-center align-middle" data-abc="true"> <i class="fa fa-heart text-danger"></i>&nbsp; <span class="align-middle">445</span> </a> <span class="text-muted d-inline-flex align-items-center align-middle ml-4"> <i class="fa fa-eye text-muted fsize-3"></i>&nbsp; <span class="align-middle">14532</span> </span> </div>
-                        <div class="px-4 pt-3"> <button type="button" class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Reply</button> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </td>
+                </tr>           
+            </tbody>
+           <% }) %>
+        </table>
+   </div>
+   
 </body>
--->
 <footer>
     <%- include("partials/footer")%>
 </footer>

@@ -11,7 +11,7 @@ const Post = sequelize.define('Post', {
      }, 
     url_imagen: {
       type: DataTypes.STRING,
-      defaultValue: 'https://www.zooplus.es/magazine/wp-content/uploads/2019/07/chat-heureux-768x513.jpg'
+      defaultValue: 'https://static.thenounproject.com/png/2616531-200.png'      
     }, 
   }, {
      tableName: 'Post',

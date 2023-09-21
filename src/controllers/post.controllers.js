@@ -1,5 +1,6 @@
 const { render } = require('ejs');
 const { Post } = require('../models/post.models.js');
+//const moment = require('moment');
 
 const crudPost = {};
 
@@ -54,7 +55,7 @@ crudPost.actualizarPost = async (req, res) => {
                 titulo: titulo,
                 contenido: contenido, 
                 url_imagen: url_imagen,
-                updatedAt: new Date()                  
+                updatedAt: new Date().toDateString()                  
               },
               { where: {
                   id: id

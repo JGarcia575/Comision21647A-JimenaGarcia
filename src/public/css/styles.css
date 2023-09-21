@@ -4,19 +4,43 @@
 }
 
 body {
-    background-color: #010101; /* o negro */
+    background-color: #010101;
    
 }
 
 h1 {
-    font-size: 50px; /*cambiar a rem*/
+    /*font-size: 2rem; */
     font-family: 'Permanent Marker', monospace;                   
     color: rgb(213, 235, 161);
     
 }
 
 .titleFont {
-    font-family: 'Black Ops One', monospace;  
+    font-family: 'Black Ops One', cursive;  
+}
+
+.titlePost {
+    font-size: 1.5rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: bold;
+}
+
+.contenido {
+    font-size: 1rem;
+}
+
+.fecha {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.card-header {
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+}
+
+.form-label {
+    font-family: 'Courier Prime', monospace;
 }
 
 .buttonFont {
