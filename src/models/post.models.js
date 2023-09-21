@@ -11,7 +11,7 @@ const Post = sequelize.define('Post', {
      }, 
     url_imagen: {
       type: DataTypes.STRING,
-      defaultValue: 'https://static.thenounproject.com/png/2616531-200.png'      
+      //defaultValue: 'https://static.thenounproject.com/png/2616531-200.png'      
     }, 
   }, {
      tableName: 'Post',

@@ -9,7 +9,7 @@ const path = require('node:path');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
-//const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+
 
 
 puertoServidor = process.env.PUERTO;

@@ -69,7 +69,7 @@ crudPost.actualizarPost = async (req, res) => {
             titulo: titulo,
             contenido: contenido, 
             url_imagen: url_imagen,
-            updatedAt: new Date()     //new Date().toDateString()              
+            updatedAt: new Date()
           },
           { where: {
               id: id

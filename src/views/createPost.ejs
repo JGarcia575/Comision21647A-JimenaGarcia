@@ -7,7 +7,7 @@
     <div class="card">
       <h5 class="card-header">Agregar publicación</h5>
       <div class="card-body">
-        <form action="/guardar" method="post">
+        <form name="Fcrear"  action="/guardar" method="post" onsubmit="validarFormulario();">
           <div class="mb-3">
             <label for="titulo" class="form-label">Titulo</label>
             <input class="form-control" id="titlo" id="titulo" name="titulo" placeholder="Escribe el titlo de la publicación">
@@ -25,7 +25,14 @@
         </form>       
       </div>
     </div>
-  </div> 
-  
+  </div>
+  <script>
+    function validarFormulario() {
+      let img = document.Fcrear.url_imagen.value;
+      if (img === "") {
+        document.Fcrear.url_imagen.value = 'https://static.thenounproject.com/png/2616531-200.png'
+      }
+    }
+  </script>
 </body>
   <%- include("partials/footer")%>
